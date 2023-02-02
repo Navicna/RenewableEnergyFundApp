@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {StyleSheet, TextInput, TouchableOpacity} from 'react-native';
-import {responsiveWidth} from '../../constants/metrics';
-import {designColors} from '../../modules/ui/colors';
-import StyledView from '../../modules/ui/StyledView';
+import React, { useState } from 'react';
+import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { responsiveWidth } from '../../constants/metrics';
+import { designColors } from '../../modules/ui/colors';
+import StyledView, { StyledViewProps } from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
-import {Sora} from '../../modules/ui/Typography/types';
+import { Sora } from '../../modules/ui/Typography/types';
 import * as Icon from 'phosphor-react-native';
 
 type InputProps = {
@@ -13,7 +13,7 @@ type InputProps = {
   onChangeText(text: string): void;
   isPassword?: boolean;
   value: string;
-};
+} & StyledViewProps;
 
 export default function Input({
   label,
@@ -21,10 +21,11 @@ export default function Input({
   onChangeText,
   isPassword,
   value,
+  ...props
 }: InputProps) {
   const [isVisible, setIsVisible] = useState(true);
   return (
-    <StyledView width={responsiveWidth(20)}>
+    <StyledView width={responsiveWidth(20)} {...props}>
       <Typography variant="formLabel" mb="xxs">
         {label}
       </Typography>
@@ -58,5 +59,5 @@ export default function Input({
 }
 
 const styles = StyleSheet.create({
-  input: {paddingLeft: 8, fontFamily: Sora.Regular},
+  input: { paddingLeft: 8, fontFamily: Sora.Regular },
 });

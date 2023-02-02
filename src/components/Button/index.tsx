@@ -1,6 +1,6 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import {responsiveWidth} from '../../constants/metrics';
+import { TouchableOpacity } from 'react-native';
+import { responsiveWidth } from '../../constants/metrics';
 import StyledView from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
 
@@ -9,7 +9,7 @@ type ButtonProps = {
   onPress(): void;
 };
 
-export default function Button({title, onPress}: ButtonProps) {
+export default function Button({ title, onPress }: ButtonProps) {
   return (
     <StyledView
       as={TouchableOpacity}

@@ -1,16 +1,16 @@
-import {DesignColors} from '../colors';
-import {Sora, Typographies} from '../Typography/types';
+import { DesignColors } from '../colors';
+import { Sora, Typographies } from '../Typography/types';
 
-import {designColors} from '../colors';
-import {spacing} from './spacing';
+import { designColors } from '../colors';
+import { spacing } from './spacing';
 
-const {xxs, xs, s, m, l, xl, xxl, xxxl} = spacing;
+const { xxs, xs, s, m, l, xl, xxl, xxxl } = spacing;
 
 export function transformMixinsToken(value: string | number) {
   if (typeof value === 'number') {
     return `${value}px`;
   }
-  const tokens: {[key: string]: number} = {
+  const tokens: { [key: string]: number } = {
     xxs,
     xs,
     s,
@@ -39,7 +39,7 @@ const {
 } = designColors;
 
 export function transformColorToken(color: DesignColors) {
-  const colors: {[key: string]: string} = {
+  const colors: { [key: string]: string } = {
     purple,
     purpleLight,
     dark,
@@ -57,7 +57,7 @@ export function transformColorToken(color: DesignColors) {
 }
 
 export function transformTypography(variant: Typographies['variants']) {
-  const typographys: {[key: string]: Partial<Typographies>} = {
+  const typographys: { [key: string]: Partial<Typographies> } = {
     formLabel: {
       fontFamily: Sora.Medium,
       fontSize: 11,
@@ -83,7 +83,7 @@ export function transformTypography(variant: Typographies['variants']) {
       fontFamily: Sora.Bold,
       fontSize: 18,
       lineHeight: 22.68,
-      letterSpacing: -2,
+      letterSpacing: 0,
       color: designColors.dark,
     },
     button: {
