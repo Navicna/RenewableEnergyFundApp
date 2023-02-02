@@ -87,10 +87,10 @@ export function transformTypography(variant: Typographies['variants']) {
       color: designColors.dark,
     },
     button: {
-      fontFamily: Sora.Regular,
+      fontFamily: Sora.Medium,
       fontSize: 16,
       lineHeight: 20.16,
-      letterSpacing: -2,
+      letterSpacing: 0,
       color: designColors.light,
     },
   };
