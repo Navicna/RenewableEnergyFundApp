@@ -1,4 +1,4 @@
-import {DesignColors} from '../../colors';
+import { DesignColors } from '../../colors';
 
 export enum Sora {
   Light = 'Sora-Light',
@@ -16,6 +16,12 @@ export type Typographies = {
   fontSize: number;
   lineHeight: number;
   letterSpacing: number;
-  variants: 'formLabel' | 'formPlaceholder' | 'formInput' | 'header' | 'button';
+  variants:
+    | 'formLabel'
+    | 'formPlaceholder'
+    | 'formInput'
+    | 'header'
+    | 'button'
+    | 'formError';
   color: DesignColors;
 };

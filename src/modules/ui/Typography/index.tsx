@@ -1,14 +1,14 @@
-import {StyleProp, TextStyle} from 'react-native';
+import { StyleProp, TextStyle } from 'react-native';
 
 import styled from 'styled-components/native';
 
-import {marginMixin, MarginMixin} from '../mixins/margin';
-import {paddingMixin, PaddingMixin} from '../mixins/padding';
-import {transformTypography, transformColorToken} from '../tokens';
-import {DesignColors} from '../colors';
-import {Typographies} from './types';
+import { marginMixin, MarginMixin } from '../mixins/margin';
+import { paddingMixin, PaddingMixin } from '../mixins/padding';
+import { transformTypography, transformColorToken } from '../tokens';
+import { DesignColors } from '../colors';
+import { Typographies } from './types';
 
-const {Text: StyledText} = styled;
+const { Text: StyledText } = styled;
 
 export type TypographyProps = {
   fontSize?: number;
@@ -23,14 +23,14 @@ export type TypographyProps = {
 export const Typography = StyledText<TypographyProps>`
   ${marginMixin}
   ${paddingMixin}
-  ${({fontSize}) => fontSize && `font-size: ${fontSize}`}px;
-  ${({color}) => color && `color: ${transformColorToken(color)}`};
+  ${({ fontSize }) => fontSize && `font-size: ${fontSize}`}px;
+  ${({ color }) => color && `color: ${transformColorToken(color)}`};
 
-  ${({opacity}) => opacity && `opacity: ${opacity}`};
+  ${({ opacity }) => opacity && `opacity: ${opacity}`};
 
-  ${({variant}) => {
+  ${({ variant }) => {
     if (variant) {
-      const {fontSize, fontFamily, lineHeight, letterSpacing, color} =
+      const { fontSize, fontFamily, lineHeight, letterSpacing, color } =
         transformTypography(variant);
       return (
         variant &&

@@ -6,55 +6,72 @@ import StyledView, { StyledViewProps } from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
 import { Sora } from '../../modules/ui/Typography/types';
 import * as Icon from 'phosphor-react-native';
+import { Control, Controller } from 'react-hook-form';
 
 type InputProps = {
   label: string;
   placeholder: string;
-  onChangeText(text: string): void;
   isPassword?: boolean;
-  value: string;
+  form: {
+    name: string;
+    control: Control<any, any>;
+  };
 } & StyledViewProps;
 
 export default function Input({
   label,
   placeholder,
-  onChangeText,
+  form,
   isPassword,
-  value,
   ...props
 }: InputProps) {
   const [isVisible, setIsVisible] = useState(true);
+
   return (
-    <StyledView width={responsiveWidth(20)} {...props}>
-      <Typography variant="formLabel" mb="xxs">
-        {label}
-      </Typography>
-      <StyledView
-        as={TextInput}
-        bgColor="greyLight"
-        borderRadius={4}
-        style={styles.input}
-        placeholder={placeholder}
-        placeholderTextColor={designColors.greyThin}
-        onChangeText={onChangeText}
-        secureTextEntry={!isVisible && isPassword}
-        value={value}
-      />
-      {isPassword && (
-        <StyledView
-          position="absolute"
-          right={8}
-          bottom={12}
-          onPress={() => setIsVisible(prevState => !prevState)}
-          as={TouchableOpacity}>
-          {isVisible ? (
-            <Icon.Eye size="24px" color={designColors.greyMedium} />
-          ) : (
-            <Icon.EyeSlash size="24px" color={designColors.greyMedium} />
+    <Controller
+      name={form.name}
+      control={form.control}
+      render={({ field, fieldState: { error } }) => (
+        <StyledView width={responsiveWidth(20)} {...props}>
+          <Typography variant="formLabel" mb="xxs">
+            {label}
+          </Typography>
+          <StyledView
+            as={TextInput}
+            ref={field.ref}
+            bgColor="greyLight"
+            borderRadius={4}
+            style={styles.input}
+            placeholder={placeholder}
+            placeholderTextColor={designColors.greyThin}
+            onChangeText={field.onChange}
+            secureTextEntry={!isVisible && isPassword}
+            value={field.value}
+            borderColor={error ? designColors.red : 'transparent'}
+            borderWidth={error ? 1 : 0}
+          />
+          {error?.message && (
+            <Typography mt="xxs" variant="formError">
+              {error.message}
+            </Typography>
+          )}
+          {isPassword && (
+            <StyledView
+              position="absolute"
+              right={8}
+              bottom={error ? 30 : 12}
+              onPress={() => setIsVisible(prevState => !prevState)}
+              as={TouchableOpacity}>
+              {isVisible ? (
+                <Icon.Eye size="24px" color={designColors.greyMedium} />
+              ) : (
+                <Icon.EyeSlash size="24px" color={designColors.greyMedium} />
+              )}
+            </StyledView>
           )}
         </StyledView>
       )}
-    </StyledView>
+    />
   );
 }
 

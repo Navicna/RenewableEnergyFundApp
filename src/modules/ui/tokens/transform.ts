@@ -79,6 +79,13 @@ export function transformTypography(variant: Typographies['variants']) {
       letterSpacing: 0,
       color: designColors.dark,
     },
+    formError: {
+      fontFamily: Sora.Regular,
+      fontSize: 10,
+      lineHeight: 13.86,
+      letterSpacing: 0,
+      color: designColors.red,
+    },
     header: {
       fontFamily: Sora.Bold,
       fontSize: 18,

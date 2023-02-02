@@ -1,14 +1,35 @@
-import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { Pressable, StyleSheet } from 'react-native';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import StyledView from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
+import * as Yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { navigate } = useNavigation();
+
+  const validationSchema = Yup.object({
+    email: Yup.string().email('Please, enter a valid email'),
+    password: Yup.string()
+      .required('Please, enter your password')
+      .test('password', '(min 8 characters)', value =>
+        value ? value?.length >= 8 : false,
+      ),
+  });
+
+  const { control, handleSubmit } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
+  const handleSubmitForm = (data: any) => {
+    console.log({ data });
+  };
+
   return (
     <StyledView>
       <Header variant="login" />
@@ -20,22 +41,28 @@ export default function Login() {
           label="E-mail"
           mb="m"
           placeholder="victorcorassa@gmail.com"
-          onChangeText={setEmail}
-          value={email}
+          form={{
+            name: 'email',
+            control,
+          }}
         />
         <Input
           label="Password"
           isPassword
           mb="xl"
           placeholder="Minimum 8 characters"
-          onChangeText={setPassword}
-          value={password}
+          form={{
+            name: 'password',
+            control,
+          }}
         />
-        <Button title="Login" onPress={() => {}} />
-        <Typography mt="s" color="greyMedium">
-          Don’t have an account?{' '}
-          <Typography style={styles.singup}>Sign up</Typography> here
-        </Typography>
+        <Button title="Login" onPress={handleSubmit(handleSubmitForm)} />
+        <Pressable onPress={() => navigate('Signup' as never)}>
+          <Typography mt="s" color="greyMedium">
+            Don’t have an account?{' '}
+            <Typography style={styles.singup}>Sign up</Typography> here
+          </Typography>
+        </Pressable>
       </StyledView>
     </StyledView>
   );
