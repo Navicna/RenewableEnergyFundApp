@@ -25,11 +25,12 @@ export interface IAuthProviderProps {
 
 function AuthProvider({ children }: IAuthProviderProps) {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   console.log({ user });
 
   useEffect(() => {
     const checkIsLoggedIn = async () => {
+      setIsLoading(true);
       const storedUser = await AsyncStorage.getItem(
         '@RenewableEnergyFundApp:USER',
       );

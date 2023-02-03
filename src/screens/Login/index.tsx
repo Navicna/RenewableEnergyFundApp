@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Pressable, StyleSheet } from 'react-native';
 import Button from '../../components/Button';
@@ -12,8 +12,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useAuthContext } from '../../contexts/AuthContext';
 
 export default function Login() {
-  const { navigate } = useNavigation();
-  const { login, isLoading } = useAuthContext();
+  const { navigate, reset } = useNavigation();
+  const { login, isLoading, user } = useAuthContext();
 
   const validationSchema = Yup.object({
     email: Yup.string().email('Please, enter a valid email'),
@@ -35,6 +35,12 @@ export default function Login() {
   const handleSubmitForm = (data: { email: string; password: string }) => {
     login(data);
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate('Home');
+    }
+  }, [user]);
 
   return (
     <StyledView>

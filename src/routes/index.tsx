@@ -4,9 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
-import Home from '../screens/Home';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useAuthContext } from '../contexts/AuthContext';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as Icon from 'phosphor-react-native';
 import { designColors } from '../modules/ui/colors';
@@ -56,7 +55,6 @@ export function BottomTabNavigator() {
 }
 
 const Routes: React.FC = () => {
-  const { user } = useAuthContext();
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -64,7 +62,7 @@ const Routes: React.FC = () => {
           headerShown: false,
           contentStyle: { backgroundColor: 'white' },
         }}
-        initialRouteName={user ? 'Home' : 'Login'}>
+        initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Home" component={BottomTabNavigator} />

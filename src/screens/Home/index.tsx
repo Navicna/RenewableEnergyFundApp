@@ -48,6 +48,7 @@ export default function Home() {
               {...item}
               ml={index === 0 ? 20 : 0}
               mr={index >= 0 ? 15 : 0}
+              key={`card-funds-${index}`}
             />
           )}
         />
@@ -81,6 +82,7 @@ export default function Home() {
               ml={index === 0 ? 20 : 0}
               mr={index >= 0 ? 15 : 0}
               mb="m"
+              key={`card-empty-${index}`}
             />
           )}
         />
