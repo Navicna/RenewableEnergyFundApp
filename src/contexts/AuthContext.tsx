@@ -25,7 +25,6 @@ export interface IAuthProviderProps {
 function AuthProvider({ children }: IAuthProviderProps) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  console.log({ user });
 
   useEffect(() => {
     const checkIsLoggedIn = async () => {
@@ -33,8 +32,6 @@ function AuthProvider({ children }: IAuthProviderProps) {
       const storedUser = await AsyncStorage.getItem(
         '@RenewableEnergyFundApp:USER',
       );
-
-      console.log({ storedUser });
 
       if (storedUser) {
         const parsedUser = JSON.parse(storedUser);

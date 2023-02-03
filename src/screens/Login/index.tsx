@@ -38,7 +38,6 @@ export default function Login() {
 
   useEffect(() => {
     if (user) {
-      console.log({ user });
       navigate('Tab' as never);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
