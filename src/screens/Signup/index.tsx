@@ -12,11 +12,13 @@ import StyledView from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { IAuthContextData, useAuthContext } from '../../contexts/AuthContext';
 
 export default function Signup() {
   const [isChecked, setIsChecked] = useState(false);
 
-  const { navigate } = useNavigation();
+  const { navigate, reset } = useNavigation();
+  const { createUser } = useAuthContext();
 
   const validationSchema = Yup.object({
     firstName: Yup.string().required('Please, enter your first name'),
@@ -33,8 +35,14 @@ export default function Signup() {
     resolver: yupResolver(validationSchema),
   });
 
-  const handleSubmitForm = (data: any) => {
-    console.log({ data });
+  const handleSubmitForm = async (data: IAuthContextData['user']) => {
+    isChecked &&
+      createUser(data).then(() => {
+        reset({
+          index: 0,
+          routes: [{ name: 'Login' as never }],
+        });
+      });
   };
 
   return (

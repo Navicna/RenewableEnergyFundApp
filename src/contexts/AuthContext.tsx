@@ -1,9 +1,20 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Alert } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 export interface IAuthContextData {
-  user: any;
+  user: {
+    email: string;
+    firstName: string;
+    lastName: string;
+    password: string;
+  };
+  logout(): Promise<void>;
+  login(response: { email: string; password: string }): Promise<void>;
+  createUser(data: IAuthContextData['user']): Promise<void>;
+  isLoading: boolean;
 }
 
 const AuthContext = createContext<IAuthContextData>({} as IAuthContextData);
@@ -15,6 +26,7 @@ export interface IAuthProviderProps {
 function AuthProvider({ children }: IAuthProviderProps) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  console.log({ user });
 
   useEffect(() => {
     const checkIsLoggedIn = async () => {
@@ -35,22 +47,38 @@ function AuthProvider({ children }: IAuthProviderProps) {
     checkIsLoggedIn();
   }, []);
 
-  const login = async (response: any) => {
+  const login = async (response: { email: string; password: string }) => {
     try {
-      if (response && response.token) {
-        await AsyncStorage.setItem(
-          '@AvaliaGAB:TOKEN',
-          JSON.stringify(response.token),
+      setIsLoading(true);
+      const createdUsers = await AsyncStorage.getItem('@CREATED_USERS');
+      if (createdUsers) {
+        const parsedUsers = JSON.parse(createdUsers);
+        const myUser = parsedUsers.find(
+          ({ email, password }: IAuthContextData['user']) =>
+            email === response.email && password === response.password,
         );
-        await AsyncStorage.setItem(
-          '@RenewableEnergyFundApp:USER',
-          JSON.stringify(response),
-        );
-
-        setUser(response);
-        setIsLoading(false);
+        if (myUser) {
+          await AsyncStorage.setItem(
+            '@RenewableEnergyFundApp:USER',
+            JSON.stringify(myUser),
+          );
+          setUser(myUser);
+          Toast.show({
+            type: 'error',
+            text1: 'Ops...',
+            text2:
+              'Não existe empresa avaliadora cadastrada com esse CNJP, fale com a equipe administrativa.',
+            visibilityTime: 5000,
+            props: {
+              text2Style: {
+                width: '50px',
+              },
+            },
+          });
+        }
+      } else {
+        Alert.alert('Ops', 'Não conseguimos encontrar este usuário.');
       }
-    } catch (err) {
     } finally {
       setIsLoading(false);
     }
@@ -62,9 +90,26 @@ function AuthProvider({ children }: IAuthProviderProps) {
     setUser(null);
   };
 
+  const createUser = async (data: IAuthContextData['user']) => {
+    try {
+      setIsLoading(true);
+      const createdUsers = await AsyncStorage.getItem('@CREATED_USERS');
+      const users = [];
+      users.push(data);
+      if (createdUsers) {
+        users.push(...createdUsers);
+      }
+      await AsyncStorage.setItem('@CREATED_USERS', JSON.stringify(users));
+      Alert.alert('Tudo certo!', 'Conta criada com sucesso!!!');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const defaultContext = {
     logout,
     login,
+    createUser,
     user,
     isLoading,
   };

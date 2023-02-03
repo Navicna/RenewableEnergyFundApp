@@ -9,9 +9,11 @@ import StyledView from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 export default function Login() {
   const { navigate } = useNavigation();
+  const { login, isLoading } = useAuthContext();
 
   const validationSchema = Yup.object({
     email: Yup.string().email('Please, enter a valid email'),
@@ -24,10 +26,14 @@ export default function Login() {
 
   const { control, handleSubmit } = useForm({
     resolver: yupResolver(validationSchema),
+    defaultValues: {
+      email: 'victorcorassa@gmail.com',
+      password: 'Master123',
+    },
   });
 
-  const handleSubmitForm = (data: any) => {
-    console.log({ data });
+  const handleSubmitForm = (data: { email: string; password: string }) => {
+    login(data);
   };
 
   return (
@@ -56,7 +62,11 @@ export default function Login() {
             control,
           }}
         />
-        <Button title="Login" onPress={handleSubmit(handleSubmitForm)} />
+        <Button
+          title="Login"
+          onPress={handleSubmit(handleSubmitForm)}
+          isLoading={isLoading}
+        />
         <Pressable onPress={() => navigate('Signup' as never)}>
           <Typography mt="s" color="greyMedium">
             Don’t have an account?{' '}
