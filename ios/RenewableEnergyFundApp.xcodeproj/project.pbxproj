@@ -14,14 +14,14 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-RenewableEnergyFundApp-RenewableEnergyFundAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-RenewableEnergyFundApp-RenewableEnergyFundAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9F29C5D1298B488C000C02DD /* Sora-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5C9298B488C000C02DD /* Sora-Light.ttf */; };
-		9F29C5D2298B488C000C02DD /* Sora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5CA298B488C000C02DD /* Sora-Regular.ttf */; };
-		9F29C5D3298B488C000C02DD /* Sora-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5CB298B488C000C02DD /* Sora-ExtraBold.ttf */; };
-		9F29C5D4298B488C000C02DD /* Sora-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5CC298B488C000C02DD /* Sora-ExtraLight.ttf */; };
-		9F29C5D5298B488C000C02DD /* Sora-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5CD298B488C000C02DD /* Sora-SemiBold.ttf */; };
-		9F29C5D6298B488C000C02DD /* Sora-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5CE298B488C000C02DD /* Sora-Thin.ttf */; };
-		9F29C5D7298B488C000C02DD /* Sora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5CF298B488C000C02DD /* Sora-Medium.ttf */; };
-		9F29C5D8298B488C000C02DD /* Sora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F29C5D0298B488C000C02DD /* Sora-Bold.ttf */; };
+		9F24EE86298CDD6900104E0B /* Sora-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE7E298CDD6900104E0B /* Sora-Thin.ttf */; };
+		9F24EE87298CDD6900104E0B /* Sora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE7F298CDD6900104E0B /* Sora-Regular.ttf */; };
+		9F24EE88298CDD6900104E0B /* Sora-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE80298CDD6900104E0B /* Sora-ExtraLight.ttf */; };
+		9F24EE89298CDD6900104E0B /* Sora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE81298CDD6900104E0B /* Sora-Bold.ttf */; };
+		9F24EE8A298CDD6900104E0B /* Sora-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE82298CDD6900104E0B /* Sora-ExtraBold.ttf */; };
+		9F24EE8B298CDD6900104E0B /* Sora-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE83298CDD6900104E0B /* Sora-Light.ttf */; };
+		9F24EE8C298CDD6900104E0B /* Sora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE84298CDD6900104E0B /* Sora-Medium.ttf */; };
+		9F24EE8D298CDD6900104E0B /* Sora-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F24EE85298CDD6900104E0B /* Sora-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,14 +51,14 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-RenewableEnergyFundApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RenewableEnergyFundApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RenewableEnergyFundApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-RenewableEnergyFundApp-RenewableEnergyFundAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RenewableEnergyFundApp-RenewableEnergyFundAppTests.release.xcconfig"; path = "Target Support Files/Pods-RenewableEnergyFundApp-RenewableEnergyFundAppTests/Pods-RenewableEnergyFundApp-RenewableEnergyFundAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		9F29C5C9298B488C000C02DD /* Sora-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-Light.ttf"; sourceTree = "<group>"; };
-		9F29C5CA298B488C000C02DD /* Sora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-Regular.ttf"; sourceTree = "<group>"; };
-		9F29C5CB298B488C000C02DD /* Sora-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-ExtraBold.ttf"; sourceTree = "<group>"; };
-		9F29C5CC298B488C000C02DD /* Sora-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-ExtraLight.ttf"; sourceTree = "<group>"; };
-		9F29C5CD298B488C000C02DD /* Sora-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-SemiBold.ttf"; sourceTree = "<group>"; };
-		9F29C5CE298B488C000C02DD /* Sora-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-Thin.ttf"; sourceTree = "<group>"; };
-		9F29C5CF298B488C000C02DD /* Sora-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-Medium.ttf"; sourceTree = "<group>"; };
-		9F29C5D0298B488C000C02DD /* Sora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sora-Bold.ttf"; sourceTree = "<group>"; };
+		9F24EE7E298CDD6900104E0B /* Sora-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-Thin.ttf"; path = "../../src/assets/fonts/Sora-Thin.ttf"; sourceTree = "<group>"; };
+		9F24EE7F298CDD6900104E0B /* Sora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-Regular.ttf"; path = "../../src/assets/fonts/Sora-Regular.ttf"; sourceTree = "<group>"; };
+		9F24EE80298CDD6900104E0B /* Sora-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-ExtraLight.ttf"; path = "../../src/assets/fonts/Sora-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9F24EE81298CDD6900104E0B /* Sora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-Bold.ttf"; path = "../../src/assets/fonts/Sora-Bold.ttf"; sourceTree = "<group>"; };
+		9F24EE82298CDD6900104E0B /* Sora-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-ExtraBold.ttf"; path = "../../src/assets/fonts/Sora-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9F24EE83298CDD6900104E0B /* Sora-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-Light.ttf"; path = "../../src/assets/fonts/Sora-Light.ttf"; sourceTree = "<group>"; };
+		9F24EE84298CDD6900104E0B /* Sora-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-Medium.ttf"; path = "../../src/assets/fonts/Sora-Medium.ttf"; sourceTree = "<group>"; };
+		9F24EE85298CDD6900104E0B /* Sora-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sora-SemiBold.ttf"; path = "../../src/assets/fonts/Sora-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -157,14 +157,14 @@
 		9F29C5B8298B46FB000C02DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F29C5D0298B488C000C02DD /* Sora-Bold.ttf */,
-				9F29C5CB298B488C000C02DD /* Sora-ExtraBold.ttf */,
-				9F29C5CC298B488C000C02DD /* Sora-ExtraLight.ttf */,
-				9F29C5C9298B488C000C02DD /* Sora-Light.ttf */,
-				9F29C5CF298B488C000C02DD /* Sora-Medium.ttf */,
-				9F29C5CA298B488C000C02DD /* Sora-Regular.ttf */,
-				9F29C5CD298B488C000C02DD /* Sora-SemiBold.ttf */,
-				9F29C5CE298B488C000C02DD /* Sora-Thin.ttf */,
+				9F24EE81298CDD6900104E0B /* Sora-Bold.ttf */,
+				9F24EE82298CDD6900104E0B /* Sora-ExtraBold.ttf */,
+				9F24EE80298CDD6900104E0B /* Sora-ExtraLight.ttf */,
+				9F24EE83298CDD6900104E0B /* Sora-Light.ttf */,
+				9F24EE84298CDD6900104E0B /* Sora-Medium.ttf */,
+				9F24EE7F298CDD6900104E0B /* Sora-Regular.ttf */,
+				9F24EE85298CDD6900104E0B /* Sora-SemiBold.ttf */,
+				9F24EE7E298CDD6900104E0B /* Sora-Thin.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -274,16 +274,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F29C5D7298B488C000C02DD /* Sora-Medium.ttf in Resources */,
-				9F29C5D2298B488C000C02DD /* Sora-Regular.ttf in Resources */,
-				9F29C5D4298B488C000C02DD /* Sora-ExtraLight.ttf in Resources */,
+				9F24EE8C298CDD6900104E0B /* Sora-Medium.ttf in Resources */,
+				9F24EE87298CDD6900104E0B /* Sora-Regular.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				9F29C5D3298B488C000C02DD /* Sora-ExtraBold.ttf in Resources */,
+				9F24EE86298CDD6900104E0B /* Sora-Thin.ttf in Resources */,
+				9F24EE8D298CDD6900104E0B /* Sora-SemiBold.ttf in Resources */,
+				9F24EE88298CDD6900104E0B /* Sora-ExtraLight.ttf in Resources */,
+				9F24EE8B298CDD6900104E0B /* Sora-Light.ttf in Resources */,
+				9F24EE89298CDD6900104E0B /* Sora-Bold.ttf in Resources */,
+				9F24EE8A298CDD6900104E0B /* Sora-ExtraBold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				9F29C5D5298B488C000C02DD /* Sora-SemiBold.ttf in Resources */,
-				9F29C5D6298B488C000C02DD /* Sora-Thin.ttf in Resources */,
-				9F29C5D8298B488C000C02DD /* Sora-Bold.ttf in Resources */,
-				9F29C5D1298B488C000C02DD /* Sora-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,7 +604,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -638,6 +638,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -675,7 +676,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -701,6 +702,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

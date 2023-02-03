@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-import { responsiveWidth } from '../../constants/metrics';
+import { isIos, responsiveWidth } from '../../constants/metrics';
 import { designColors } from '../../modules/ui/colors';
 import StyledView, { StyledViewProps } from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
@@ -49,6 +49,7 @@ export default function Input({
             value={field.value}
             borderColor={error ? designColors.red : 'transparent'}
             borderWidth={error ? 1 : 0}
+            p={isIos ? 18 : undefined}
           />
           {error?.message && (
             <Typography mt="xxs" variant="formError">
