@@ -1,15 +1,17 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { ActivityIndicator, TouchableOpacity } from 'react-native';
 import { responsiveWidth } from '../../constants/metrics';
+import { designColors } from '../../modules/ui/colors';
 import StyledView from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
 
 type ButtonProps = {
   title: string;
   onPress(): void;
+  isLoading?: boolean;
 };
 
-export default function Button({ title, onPress }: ButtonProps) {
+export default function Button({ title, onPress, isLoading }: ButtonProps) {
   return (
     <StyledView
       as={TouchableOpacity}
@@ -20,7 +22,11 @@ export default function Button({ title, onPress }: ButtonProps) {
       alignItems="center"
       justifyContent="center"
       p="s">
-      <Typography variant="button">{title}</Typography>
+      {isLoading ? (
+        <ActivityIndicator color={designColors.light} />
+      ) : (
+        <Typography variant="button">{title}</Typography>
+      )}
     </StyledView>
   );
 }

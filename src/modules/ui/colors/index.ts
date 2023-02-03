@@ -7,6 +7,7 @@ export type DesignColors =
   | 'greyBackground'
   | 'greyThin'
   | 'greyMedium'
+  | 'greyBorder'
   | 'green'
   | 'yellow'
   | 'red'
@@ -22,6 +23,7 @@ export const designColors = {
   greyBackground: '#F5F5F5',
   greyThin: '#CFCFCF',
   greyMedium: '#A0A0A0',
+  greyBorder: '#E6E6E6',
   green: '#0FDF8F',
   yellow: '#F0A719',
   red: '#EE8688',

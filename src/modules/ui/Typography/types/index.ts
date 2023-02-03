@@ -22,6 +22,16 @@ export type Typographies = {
     | 'formInput'
     | 'header'
     | 'button'
-    | 'formError';
+    | 'formError'
+    | 'homeTitle'
+    | 'currencyLarge'
+    | 'tag'
+    | 'percentageUpper'
+    | 'cardCurrency'
+    | 'cardCurrencyGreen'
+    | 'cardFundLabel'
+    | 'purpleCardLabel'
+    | 'purpleCardDescription'
+    | 'cardEmptyLabel';
   color: DesignColors;
 };
