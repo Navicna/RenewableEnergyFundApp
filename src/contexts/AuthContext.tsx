@@ -63,6 +63,8 @@ function AuthProvider({ children }: IAuthProviderProps) {
             JSON.stringify(myUser),
           );
           setUser(myUser);
+        } else {
+          Alert.alert('Invalid email or password.');
         }
       } else {
         Alert.alert('Oops!', 'User not found.');
@@ -73,8 +75,7 @@ function AuthProvider({ children }: IAuthProviderProps) {
   };
 
   const logout = async () => {
-    await AsyncStorage.removeItem('@AvaliaGAB:TOKEN');
-    await AsyncStorage.removeItem('@AvaliaGAB:USER');
+    await AsyncStorage.removeItem('@RenewableEnergyFundApp:USER');
     setUser(null);
   };
 

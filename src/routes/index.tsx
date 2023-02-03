@@ -51,8 +51,20 @@ const tabs = [
   },
   {
     route: 'Portfolio',
-    label: 'Portfolio',
-    component: () => require('../screens/Home').default,
+    component: () => require('../screens/Portfolio').default,
+    tabBarLabel: ({ focused }: { focused: boolean }) => (
+      <Typography
+        fontSize={10}
+        color={focused ? designColors.purple : designColors.dark}>
+        Portfolio
+      </Typography>
+    ),
+    tabBarIcon: ({ focused }: { focused: boolean }) => (
+      <Icon.Clock
+        size="24px"
+        color={focused ? designColors.purple : designColors.dark}
+      />
+    ),
   },
 ];
 

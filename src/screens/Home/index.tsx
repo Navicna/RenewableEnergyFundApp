@@ -10,6 +10,7 @@ import { responsiveWidth } from '../../constants/metrics';
 import { designColors } from '../../modules/ui/colors';
 import StyledView from '../../modules/ui/StyledView';
 import Typography from '../../modules/ui/Typography';
+import * as Animatable from 'react-native-animatable';
 
 const data = [
   {
@@ -29,6 +30,11 @@ const data = [
   },
 ];
 
+const animation = {
+  0: { opacity: 0, translateY: -100 },
+  1: { opacity: 1, translateY: 0 },
+};
+
 export default function Home() {
   const { navigate } = useNavigation();
   return (
@@ -38,25 +44,36 @@ export default function Home() {
       <StyledView>
         <Header variant="home" />
 
-        <Typography variant="header" ml={20} mv="m">
-          Funds
-        </Typography>
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          horizontal
-          data={data}
-          renderItem={({ item, index }) => (
-            <CardFunds
-              {...item}
-              ml={index === 0 ? 20 : 0}
-              mr={index >= 0 ? 15 : 0}
-              key={`card-funds-${index}`}
-              onPress={() => index === 0 && navigate('Trade' as never)}
-            />
-          )}
-        />
+        <StyledView
+          as={Animatable.View}
+          animation={animation}
+          duration={2000}
+          useNativeDriver>
+          <Typography variant="header" ml={20} mv="m">
+            Funds
+          </Typography>
+          <FlatList
+            showsHorizontalScrollIndicator={false}
+            horizontal
+            data={data}
+            renderItem={({ item, index }) => (
+              <CardFunds
+                {...item}
+                ml={index === 0 ? 20 : 0}
+                mr={index >= 0 ? 15 : 0}
+                key={`card-funds-${index}`}
+                onPress={() => index === 0 && navigate('Trade' as never)}
+              />
+            )}
+          />
+        </StyledView>
 
         <StyledView
+          as={Animatable.View}
+          animation={animation}
+          duration={2000}
+          delay={1000}
+          useNativeDriver
           bgColor="purple"
           flexDirection="row"
           justifyContent="space-between"
