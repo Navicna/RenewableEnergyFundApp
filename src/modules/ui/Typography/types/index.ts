@@ -32,6 +32,11 @@ export type Typographies = {
     | 'cardFundLabel'
     | 'purpleCardLabel'
     | 'purpleCardDescription'
-    | 'cardEmptyLabel';
+    | 'cardEmptyLabel'
+    | 'graphicCurrency'
+    | 'carouselPurple'
+    | 'carouselGrey'
+    | 'homeTitleGrey'
+    | 'buttonOutlined';
   color: DesignColors;
 };

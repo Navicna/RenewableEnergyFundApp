@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ScrollView } from 'react-native';
+import { Alert, ScrollView } from 'react-native';
 import { Pressable, StyleSheet } from 'react-native';
 import Button from '../../components/Button';
 import Checkbox from '../../components/Checkbox';
@@ -36,6 +36,9 @@ export default function Signup() {
   });
 
   const handleSubmitForm = async (data: IAuthContextData['user']) => {
+    if (data && !isChecked) {
+      return Alert.alert('You must accept the privacy terms to continue.');
+    }
     isChecked &&
       createUser(data).then(() => {
         reset({

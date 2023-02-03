@@ -20,7 +20,7 @@ export type StyledViewProps = {
   maxHeight?: number | string;
   width?: number | string;
 
-  alignSelf?: string;
+  alignSelf?: FlexStyle['alignSelf'];
   alignItems?: FlexAlignType;
   justifyContent?: FlexStyle['justifyContent'];
 
@@ -32,6 +32,7 @@ export type StyledViewProps = {
   borderTopWidth?: number;
   borderBottomWidth?: number;
   borderTopRadius?: number;
+  borderEndRadius?: number;
   aspectRatio?: number;
 } & Partial<MarginMixin & PaddingMixin & PositionedMixin & FlexMixin>;
 
@@ -71,6 +72,10 @@ const StyledView = styled.View<StyledViewProps>`
   ${({ borderTopRadius }) =>
     borderTopRadius &&
     `border-top-left-radius: ${borderTopRadius}px border-top-right-radius: ${borderTopRadius}px `};
+
+  ${({ borderEndRadius }) =>
+    borderEndRadius &&
+    `border-bottom-left-radius: ${borderEndRadius}px border-bottom-right-radius: ${borderEndRadius}px `};
 `;
 
 export default StyledView;

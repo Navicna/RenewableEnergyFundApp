@@ -12,7 +12,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useAuthContext } from '../../contexts/AuthContext';
 
 export default function Login() {
-  const { navigate, reset } = useNavigation();
+  const { navigate } = useNavigation();
   const { login, isLoading, user } = useAuthContext();
 
   const validationSchema = Yup.object({
@@ -38,8 +38,9 @@ export default function Login() {
 
   useEffect(() => {
     if (user) {
-      navigate('Home');
+      navigate('Tab' as never);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (

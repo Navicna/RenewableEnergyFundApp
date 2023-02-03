@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Pressable } from 'react-native';
 import { Images } from '../../constants/images';
 import { designColors } from '../../modules/ui/colors';
 import StyledView, { StyledViewProps } from '../../modules/ui/StyledView';
@@ -10,12 +10,14 @@ type CardFundsProps = {
   type: 'wind' | 'sun' | 'leaf' | string;
   currency: number;
   percentage: number;
+  onPress(): void;
 } & StyledViewProps;
 
 export default function CardFunds({
   type,
   currency,
   percentage,
+  onPress,
   ...props
 }: CardFundsProps) {
   const image = () => {
@@ -50,9 +52,11 @@ export default function CardFunds({
 
   return (
     <StyledView
+      as={Pressable}
       borderWidth={1}
       borderColor={designColors.greyBorder}
       borderRadius={4}
+      onPress={onPress}
       p="s"
       {...props}>
       <Image source={image()} />

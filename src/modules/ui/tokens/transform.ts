@@ -100,12 +100,26 @@ export function transformTypography(variant: Typographies['variants']) {
       letterSpacing: 0,
       color: designColors.light,
     },
+    buttonOutlined: {
+      fontFamily: Sora.Medium,
+      fontSize: 16,
+      lineHeight: 20.16,
+      letterSpacing: 0,
+      color: designColors.purple,
+    },
     homeTitle: {
       fontFamily: Sora.Bold,
       fontSize: 14,
       lineHeight: 17.64,
       letterSpacing: 0,
       color: designColors.dark,
+    },
+    homeTitleGrey: {
+      fontFamily: Sora.Bold,
+      fontSize: 14,
+      lineHeight: 17.64,
+      letterSpacing: 0,
+      color: designColors.greyMedium,
     },
     currencyLarge: {
       fontFamily: Sora.Bold,
@@ -169,6 +183,34 @@ export function transformTypography(variant: Typographies['variants']) {
       lineHeight: 15,
       letterSpacing: 0,
       color: designColors.dark,
+    },
+    graphicCurrency: {
+      fontFamily: Sora.Medium,
+      fontSize: 14,
+      lineHeight: 17.54,
+      letterSpacing: 0,
+      color: designColors.greyMedium,
+    },
+    carouselPurple: {
+      fontFamily: Sora.Medium,
+      fontSize: 15,
+      lineHeight: 18.9,
+      letterSpacing: 0,
+      color: designColors.purple,
+    },
+    carouselGrey: {
+      fontFamily: Sora.Medium,
+      fontSize: 15,
+      lineHeight: 18.9,
+      letterSpacing: 0,
+      color: designColors.greyMedium,
+    },
+    brandCardDescription: {
+      fontFamily: Sora.Regular,
+      fontSize: 14,
+      lineHeight: 18.9,
+      letterSpacing: 0,
+      color: designColors.greyMedium,
     },
   };
 

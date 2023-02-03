@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { FlatList, Image } from 'react-native';
 import { ScrollView } from 'react-native';
@@ -29,6 +30,7 @@ const data = [
 ];
 
 export default function Home() {
+  const { navigate } = useNavigation();
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -49,6 +51,7 @@ export default function Home() {
               ml={index === 0 ? 20 : 0}
               mr={index >= 0 ? 15 : 0}
               key={`card-funds-${index}`}
+              onPress={() => index === 0 && navigate('Trade' as never)}
             />
           )}
         />
@@ -77,7 +80,7 @@ export default function Home() {
           showsHorizontalScrollIndicator={false}
           horizontal
           data={Array(3)}
-          renderItem={({ item, index }) => (
+          renderItem={({ index }) => (
             <CardEmpty
               ml={index === 0 ? 20 : 0}
               mr={index >= 0 ? 15 : 0}

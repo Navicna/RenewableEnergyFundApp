@@ -5,4 +5,8 @@ export const Images = {
   graphicRed: require('../assets/img/graphic-red.png'),
   graphicGreen: require('../assets/img/graphic-green.png'),
   businessStatistics: require('../assets/img/business-statistics.png'),
+  graphicLarge: require('../assets/img/graphic-large.png'),
+  logoAspira: require('../assets/img/logo-aspira.png'),
+  logoClimeworks: require('../assets/img/logo-climeworks.png'),
+  skyPicture: require('../assets/img/sky-picture.png'),
 };

@@ -110,6 +110,29 @@ export default function Header({ variant }: HeaderProps) {
         </StyledView>
       );
 
+    case 'detailed':
+      return (
+        <StyledView
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="space-between"
+          borderBottomWidth={1}
+          borderColor={designColors.greyLight}
+          height={HEADER_HEIGHT - top}
+          p="s">
+          <Pressable onPress={goBack}>
+            <Icon.ArrowLeft size="24px" color={designColors.dark} />
+          </Pressable>
+          <StyledView alignItems="center">
+            <Typography variant="homeTitle" mr="xs">
+              Wind Fund
+            </Typography>
+            <Typography>WFND</Typography>
+          </StyledView>
+          <StyledView />
+        </StyledView>
+      );
+
     default:
       return null;
   }

@@ -17,7 +17,41 @@ const Tab = createBottomTabNavigator();
 const tabs = [
   {
     route: 'Home',
-    label: 'Home',
+    component: () => require('../screens/Home').default,
+    tabBarLabel: ({ focused }: { focused: boolean }) => (
+      <Typography
+        fontSize={10}
+        color={focused ? designColors.purple : designColors.dark}>
+        Home
+      </Typography>
+    ),
+    tabBarIcon: ({ focused }: { focused: boolean }) => (
+      <Icon.House
+        size="24px"
+        color={focused ? designColors.purple : designColors.dark}
+      />
+    ),
+  },
+  {
+    route: 'Trade',
+    component: () => require('../screens/Details').default,
+    tabBarLabel: ({ focused }: { focused: boolean }) => (
+      <Typography
+        fontSize={10}
+        color={focused ? designColors.purple : designColors.dark}>
+        Trade
+      </Typography>
+    ),
+    tabBarIcon: ({ focused }: { focused: boolean }) => (
+      <Icon.ArrowsLeftRight
+        size="24px"
+        color={focused ? designColors.purple : designColors.dark}
+      />
+    ),
+  },
+  {
+    route: 'Portfolio',
+    label: 'Portfolio',
     component: () => require('../screens/Home').default,
   },
 ];
@@ -29,24 +63,14 @@ export function BottomTabNavigator() {
         headerShown: false,
       }}
       initialRouteName="Home">
-      {tabs.map(({ route, label, component }, index) => (
+      {tabs.map(({ route, component, tabBarLabel, tabBarIcon }) => (
         <Tab.Screen
+          key={`tab-navigator-${route}`}
           name={route}
           getComponent={component}
           options={{
-            tabBarLabel: ({ focused }) => (
-              <Typography
-                fontSize={10}
-                color={focused ? designColors.purple : designColors.dark}>
-                {label}
-              </Typography>
-            ),
-            tabBarIcon: ({ focused }) => (
-              <Icon.House
-                size="24px"
-                color={focused ? designColors.purple : designColors.dark}
-              />
-            ),
+            tabBarLabel,
+            tabBarIcon,
           }}
         />
       ))}
@@ -65,7 +89,7 @@ const Routes: React.FC = () => {
         initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Home" component={BottomTabNavigator} />
+        <Stack.Screen name="Tab" component={BottomTabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

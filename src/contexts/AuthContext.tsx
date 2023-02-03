@@ -2,7 +2,6 @@ import React, { createContext, useState, useEffect } from 'react';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert } from 'react-native';
-import Toast from 'react-native-toast-message';
 
 export interface IAuthContextData {
   user: {
@@ -64,21 +63,9 @@ function AuthProvider({ children }: IAuthProviderProps) {
             JSON.stringify(myUser),
           );
           setUser(myUser);
-          Toast.show({
-            type: 'error',
-            text1: 'Ops...',
-            text2:
-              'Não existe empresa avaliadora cadastrada com esse CNJP, fale com a equipe administrativa.',
-            visibilityTime: 5000,
-            props: {
-              text2Style: {
-                width: '50px',
-              },
-            },
-          });
         }
       } else {
-        Alert.alert('Ops', 'Não conseguimos encontrar este usuário.');
+        Alert.alert('Oops!', 'User not found.');
       }
     } finally {
       setIsLoading(false);
@@ -101,7 +88,7 @@ function AuthProvider({ children }: IAuthProviderProps) {
         users.push(...createdUsers);
       }
       await AsyncStorage.setItem('@CREATED_USERS', JSON.stringify(users));
-      Alert.alert('Tudo certo!', 'Conta criada com sucesso!!!');
+      Alert.alert('Account created successfully!');
     } finally {
       setIsLoading(false);
     }
